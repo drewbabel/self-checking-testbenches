@@ -52,13 +52,22 @@ module count_clock (
     else if ((hh == 8'h11) & mm_c) pm <= ~pm;
   end
 
+  // SymbiYosys verifcation practice
+`ifdef FORMAL
+  initial assume (ss[3:0] <= 4'h9);  // Start already in a legal BCD state
+
+  always @(posedge clk) begin
+    assert (ss[3:0] <= 4'h9);  // Ensure ss ones-digit never leaves 0-9
+  end
+`endif
+
 endmodule
 
 module counter #(
     // All BCD, 2 digits = 8 bits each
     parameter logic [7:0] DEFAULT,
-    logic [7:0] LIMIT,
-    logic [7:0] WRAP
+    parameter logic [7:0] LIMIT,
+    parameter logic [7:0] WRAP
 ) (
     input logic clk,
     input logic reset,

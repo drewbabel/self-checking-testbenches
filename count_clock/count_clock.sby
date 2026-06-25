@@ -1,0 +1,12 @@
+[options]
+mode prove
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal count_clock.sv
+prep -top count_clock
+
+[files]
+count_clock.sv
