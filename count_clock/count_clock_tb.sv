@@ -101,7 +101,7 @@ module count_clock_tb ();
 
   always_comb begin
     total_hh = total_ss / 3600;
-    total_mm = (total_ss / 60) % 60;
+    total_mm = (total_ss / 60) % 50;
 
     expected_pm = (total_ss >= 43200);
     expected_hh = (total_hh % 12 == 0) ? 12 : total_hh % 12;
