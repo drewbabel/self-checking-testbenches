@@ -1,6 +1,7 @@
 *.vcd
 sim
 .DS_Store
+build/
 
 # SymbiYosys work dir (generated; sby names it after the .sby file)
 count_clock/count_clock/
