@@ -9,12 +9,10 @@ A set of small RTL modules, each with a self-checking testbench. Every testbench
 | Module | Description | Verification |
 |--------|-------------|--------------|
 | `tff` | A T flip-flop that toggles on enable | Self-checking testbench |
-| `count_clock` | A 12-hour BCD clock with seconds, minutes, hours, and AM/PM | Self-checking testbench and a formal proof |
+| `count_clock` | A 12-hour BCD clock with seconds, minutes, hours, and AM/PM | Self-checking testbench and a formal proof (SymbiYosys)|
 | `fsm_hdlc` | An HDLC bit-pattern recognizer | Self-checking testbench |
 | `debounce_counter` | A pushbutton debouncer and press counter: 2-FF synchronizer, contact debounce, and edge-detect | Self-checking testbench and verified on real hardware (Basys 3) |
 | `seven_seg` | A four-digit seven-segment controller that time-multiplexes four BCD digits onto the shared segment bus | Self-checking testbench and verified on real hardware (Basys 3) |
-
-The `count_clock` formal proof uses SymbiYosys to prove that its seconds digit can never hold an illegal BCD value, for any possible input.
 
 ## Synthesis cost
 
