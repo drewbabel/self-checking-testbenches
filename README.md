@@ -12,6 +12,7 @@ A set of small RTL modules, each with a self-checking testbench. Every testbench
 | `count_clock` | A 12-hour BCD clock with seconds, minutes, hours, and AM/PM | Self-checking testbench and a formal proof |
 | `fsm_hdlc` | An HDLC bit-pattern recognizer | Self-checking testbench |
 | `debounce_counter` | A pushbutton debouncer and press counter: 2-FF synchronizer, contact debounce, and edge-detect | Self-checking testbench and verified on real hardware (Basys 3) |
+| `seven_seg` | A four-digit seven-segment controller that time-multiplexes four BCD digits onto the shared segment bus | Self-checking testbench and verified on real hardware (Basys 3) |
 
 The `count_clock` formal proof uses SymbiYosys to prove that its seconds digit can never hold an illegal BCD value, for any possible input.
 
@@ -25,6 +26,7 @@ Resource usage when synthesized for the Basys 3 (Xilinx 7-series):
 | `count_clock` | 41 | 25 | 6 | 28 |
 | `fsm_hdlc` | 7 | 7 | 1 | 6 |
 | `debounce_counter` | 8 | 44 | 10 | 19 |
+| `seven_seg` | 15 | 17 | 5 | 29 |
 
 ## Running
 
